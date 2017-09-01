@@ -3,28 +3,32 @@
 //start year and end year "start-year" "end-year"
 //4 input fields
 //content dump into "top-articles"
-$(document).ready(function(){
+  var queryURL = "https://api.nytimes.com/svc/search/v2/articlesearch.json";
 
-    var url = "https://api.nytimes.com/svc/search/v2/articlesearch.json";
-
-    function Test(search){    
-        var object = {
-            "q": search,
-            "api-key": "e6fe3543e4414ea8a7e157e3c9282091",
-        }
-        return object;
-        console.log("testing");
+  function Test(search){    
+    var parameters = {
+        "q": search,
+        "api-key": "e6fe3543e4414ea8a7e157e3c9282091"
     }
+    return parameters;
+  }
 
-    Test("car");
+
+  $(document).ready(function(){
 
     $("#submit").on("click", function(event){
         event.preventDefault()
         var searchTerm = $("#search-term").val();
-        var parameters = $.param(searchTerm(searchTerm));
+        var parmObj = Test(searchTerm);
+        var parameters = $.param(parmObj);
+        queryURL += '?' + parameters;
 
-        url += '?' + parameters;
-        console.log(url);
+        $.ajax({
+          url: queryURL,
+          method: "GET"
+        }).done(function (response) {
+          console.log(response);
+        })
     })
 
 })
