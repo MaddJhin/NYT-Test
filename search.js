@@ -4,26 +4,27 @@
 //4 input fields
 //content dump into "top-articles"
 $(document).ready(function(){
-function searchTerm(search){
-   
-    var myParamerters = {
-       "q": search,
-       'api-key': "e6fe3543e4414ea8a7e157e3c9282091"
-   }
-   return myParamerters
-}
-var url = "https://api.nytimes.com/svc/search/v2/articlesearch.json";
-url += '?' + $.param({
-  'api-key': "e6fe3543e4414ea8a7e157e3c9282091",
-  'q': "car"
-});
-$.ajax({
-  url: url,
-  method: 'GET',
-}).done(function(result) {
-  console.log(result);
-}).fail(function(err) {
-  throw err;
-});
+
+    var url = "https://api.nytimes.com/svc/search/v2/articlesearch.json";
+
+    function Test(search){    
+        var object = {
+            "q": search,
+            "api-key": "e6fe3543e4414ea8a7e157e3c9282091",
+        }
+        return object;
+        console.log("testing");
+    }
+
+    Test("car");
+
+    $("#submit").on("click", function(event){
+        event.preventDefault()
+        var searchTerm = $("#search-term").val();
+        var parameters = $.param(searchTerm(searchTerm));
+
+        url += '?' + parameters;
+        console.log(url);
+    })
 
 })
