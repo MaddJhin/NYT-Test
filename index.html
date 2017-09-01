@@ -21,26 +21,30 @@
     </div>
     <div class="container">
         <!-- Input field for search term  -->
-        <input id="search-term" type="text" name="Search Term" value="">
-        <input id="record-number" type="text" name="Record Number" value="">
-        <input id="start-year" type="text" name="" value="">
-        <input id="end-yar" type="text" name="" value="">
-    
-    <form>
-        <div class="form-group">
-            <label for="search-term">Search Term</label>
-            <input type="text" class="form-control" id="search-term" placeholder="Enter Search">
-            <small id="searchHelp" class="form-text text-muted">Required</small>
-        </div>
-        <div class="form-group">
-            <label for="record-number">Record Number</label>
-            <input type="text" class="form-control" id="record-number" placeholder="Number">
-            <small class="form-text text-muted">optional</small>
-        </div>
-        <button id="submit" type="submit" class="btn btn-primary">Submit</button>
-        <button id="clear" type="submit" class="btn btn-caution">Clear</button>
-
-    </form>
+        <form>
+            <div class="form-group">
+                <label for="search-term">Search Term</label>
+                <input type="text" class="form-control" id="search-term" placeholder="Enter Search">
+                <small id="searchHelp" class="form-text text-muted">Required</small>
+            </div>
+            <div class="form-group">
+                <label for="record-number">Record Number</label>
+                <input type="text" class="form-control" id="record-number" placeholder="Number">
+                <small class="form-text text-muted">Optional</small>
+            </div>
+            <div class="form-group">
+                <label for="end-year">Start Year</label>
+                <input type="text" class="form-control" id="end-yar" placeholder="Year">
+                <small class="form-text text-muted">Optional</small>
+            </div>
+            <div class="form-group">
+                <label for="end-year">End Year</label>
+                <input type="text" class="form-control" id="end-year" placeholder="Year">
+                <small class="form-text text-muted">optional</small>
+            </div>
+            <button id="submit" type="submit" class="btn btn-primary">Submit</button>
+            <button id="clear" type="submit" class="btn btn-caution">Clear</button>
+        </form>
     <!-- Buttons for searching and clearing -->
      </div>
 
